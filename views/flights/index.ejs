@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= Mongoose-Flights %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= All Flights %></h1>
+    <table>
+      <thead>
+        <th>Airline</th>
+        <th>Flight Number</th>
+        <th>Departure</th>
+      </thead>
+      <tbody>
+      <% flights.forEach(function(flight) { %>
+          <tr>
+            <td><%= flight.airline %></td>
+            <td><%= flight.flightNo %></td>
+            <td><%= flight.departs %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+  </body>
+</html>
