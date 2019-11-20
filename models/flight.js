@@ -2,6 +2,17 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 //create Flight model/schema
+
+var destinationSchema = new Schema({
+    airport: {
+        type: String,
+        enum: ['AUS', 'DAL', 'LAX', 'SAN', 'SEA']
+    },
+    arrival: {
+        type: Date
+    }
+});
+
 var flightSchema = new Schema({
     airline: {
         type: String,
@@ -17,7 +28,12 @@ var flightSchema = new Schema({
     default: function() {
         return new Date.now() - 365*24*60*60*1000
         }
-    } 
+    },
+    airport: {
+        type: String,
+        enum: ['AUS', 'DAL', 'LAX', 'SAN', 'SEA']
+    },
+    destinations: [destinationSchema] 
 }, {
     timestamps: true
 });

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongoose Flights</title>
+</head>
+<body>
+    <section id="Flight-details">
+        <h1>Flight Details</h1>
+            <div>Airline: </div>
+            <div><%= flight.airline %></div>
+            <div>Flight Number: </div>
+            <div><%= flight.flightNo %></div>
+            <div>Departure Date: </div>
+            <div><%= flight.departs %></div>
+      </section>
+      
+        <h2>Add Destination</h2>
+            <form id="add-destination" method="POST" action="/flights/<%= flight._id %>/destinations">
+
+              <label>Airport:
+                <select name="airport">
+                    <option value="AUS">AUS</option>
+                    <option value="DAL">DAL</option>
+                    <option value="LAX">LAX</option>
+                    <option value="SAN">SAN</option>
+                    <option value="SEA">SEA</option>
+                </select>
+              </label>
+              <label>Arrival:
+                <input type="text" name="arrival">
+              </label>
+              <input type="submit" value="Add Destination">
+            </form>
+<table>
+    <thead>
+        <tr>
+            <th>Airport</th>
+            <th>Arrival</th>
+        </tr>
+    </thead>
+    <tbody>
+</table>
+            <% flight.destinations.forEach(function(flight) { %>
+                <tr>
+                  <td><%= flight.airport %></td>
+                  <td><%= flight.arrival %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+            </body>
+</html>
