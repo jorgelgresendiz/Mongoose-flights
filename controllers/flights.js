@@ -13,7 +13,11 @@ function index (req, res) {
 }
 
 function create(req, res) {
-    res.redirect('/flights/new');
+    var flight = new Flight(req.body);
+    flight.save(function(err) {
+        if (err) return res.render('flights/new');
+        res.redirect('/flights');
+    });
 };
 
 function newFlight(req, res) {

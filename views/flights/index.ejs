@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= Mongoose-Flights %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongoose-Flights</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
   <body>
-    <h1><%= All Flights %></h1>
+    <h1>All Flights</h1>
     <table>
       <thead>
         <th>Airline</th>
@@ -19,8 +22,9 @@
             <td><%= flight.flightNo %></td>
             <td><%= flight.departs %></td>
           </tr>
-          <% }) %>
-        </tbody>
+      <% }) %>
+      </tbody>
       </table>
+      <a href="/flights/new">Add Flights</a>
   </body>
 </html>
