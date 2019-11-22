@@ -8,7 +8,16 @@
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 <body>
-    <h1>Enter a New Ticket Here:</h1>
-    <form action="/tickets" method="POST">
+    <h2>Enter a New Ticket Here:</h2>
+    <form action="/flights/<%= flightId %>/tickets" method="POST">
+        <label>Seat:
+          <input type="text" name="seat" required pattern="[A-F][1-9]\d?">
+        </label><br>
+        <label>Price:
+          <input type="text" name="price">
+        </label><br>
+        <br>
+        <button type="submit" value="Add Ticket">Add ticket</button>
+    </form>  
 </body>
 </html>
